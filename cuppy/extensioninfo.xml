@@ -23,7 +23,6 @@
                usemaven="false"
             >
         <requires-extension name="cockpit" version="[4.2.1,)"/>
-        
 
         <coremodule packageroot="de.hybris.platform.cuppy"
                     manager="de.hybris.platform.jalo.extension.GenericManager"
