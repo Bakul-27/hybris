@@ -7,6 +7,7 @@
         -->             
                  
         <path dir="${HYBRIS_BIN_DIR}" />
+        <!-- <extension dir="${HYBRIS_BIN_DIR}/ext-platform-optional/mediaconversion"/> -->
                                              
         <!-- ext-platform -->
         <extension name="admincockpit" />
@@ -15,7 +16,8 @@
         <extension name="hmc" />
         <extension name="mcc" />
         <extension name="platformhmc" />                                             
-        <extension name="mediaconversion" /> 
+        <extension name="mediaconversion" />
+        
         <extension name="cuppy"/>
         <extension name="cuppytrail" />
         <extension name="cuppytrailhmc" />

@@ -82,7 +82,46 @@
     				<persistence type="property"/>
     				<defaultvalue>em().getEnumerationValue("StadiumType","openair")</defaultvalue>
 				</attribute>
+				<attribute qualifier="stadiumImage" type="MediaContainer" >
+    				<persistence type="property"/>
+				</attribute>
             </attributes>
         </itemtype>
+        
+        
+        <itemtype code="NotEmptyCuppyConstraint" autocreate="true" generate="true" extends="AttributeConstraint"
+             jaloclass="de.hybris.platform.cuppytrail.constraints.NotEmptyCuppyConstraint">
+            <description>Custom constraint which checks for empty strings.</description>
+            <attributes>
+                <attribute qualifier="annotation" type="java.lang.Class" redeclare="true">
+                    <modifiers write="false" initial="true" optional="false"/>
+                    <defaultvalue>
+                        de.hybris.platform.cuppytrail.constraints.NotEmptyCuppy.class
+                    </defaultvalue>
+                </attribute>
+            </attributes>
+        </itemtype> 
+        
+        <itemtype code="MatchBet" autocreate="false" generate="false">
+   			<attributes>
+     			<attribute autocreate="true" qualifier="matchScore" type="java.lang.Integer" >
+        			<persistence type="dynamic" />
+        			<modifiers read="true" write="true"/>
+     			</attribute>
+   			</attributes>
+		</itemtype>
+        
+        <itemtype code="Customer" autocreate="false" generate="false">
+                   <description>Extending Customer type with additional attributes.</description>
+      		<attributes>
+            	<attribute autocreate="true" qualifier="matchScore" type="java.lang.Integer">
+                      <modifiers write="false"/>
+                      <persistence type="dynamic" attributeHandler="matchBetScoreAttributeHandler"/>
+                      <description>Dynamic attribute for customer site age</description>
+            	</attribute>
+      		</attributes>
+		</itemtype>
+        
+        <!--  attributeHandler="matchBetScoreAttributeHandler"-->
 	</itemtypes>
 </items>
